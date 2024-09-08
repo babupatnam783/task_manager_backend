@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: cd task_manager_backend && npm install # Install dependencies for the backend
 
-      - name: Authenticate with Firebase
-        run: echo "${{ secrets.FIREBASE_TOKEN }}" | firebase login:ci # Authenticate with Firebase using the token
-
       - name: Set Firebase Project
         run: cd task_manager_backend && firebase use task-manager-backend-1a308 # Set your Firebase project ID
 
