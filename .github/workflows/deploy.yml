@@ -1,0 +1,25 @@
+name: Deploy Node.js Backend to Firebase Functions
+
+on:
+  push:
+    branches:
+      - main # Adjust this based on your main branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Use the same version as your functions
+
+      - name: Install dependencies
+        run: cd functions && npm install
+
+      - name: Deploy to Firebase Functions
+        run: cd functions && npm run deploy --token ${{ secrets.FIREBASE_TOKEN }}
