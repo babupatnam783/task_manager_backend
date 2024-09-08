@@ -1,5 +1,5 @@
 {
-  "name": "functions",
+  "name": "task_manager_backend",
   "description": "Cloud Functions for Firebase",
   "scripts": {
     "lint": "eslint .",
