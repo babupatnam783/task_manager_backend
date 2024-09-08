@@ -13,7 +13,7 @@
       "codebase": "default"
     },
     {
-      "source": "tasj_manager_backend",
+      "source": "task_manager_backend",
       "codebase": "task_manager_backend",
       "ignore": [
         "node_modules",
