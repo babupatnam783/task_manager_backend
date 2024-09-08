@@ -24,8 +24,5 @@ jobs:
       - name: Install dependencies
         run: cd task_manager_backend && npm install # Install dependencies for the backend
 
-      - name: Set Firebase Project
-        run: cd task_manager_backend && firebase use task-manager-backend-1a308 # Set your Firebase project ID
-
       - name: Deploy to Firebase Functions
-        run: cd task_manager_backend && npm run deploy --token ${{ secrets.FIREBASE_TOKEN }}
+        run: cd task_manager_backend && firebase deploy --only functions --token ${{ secrets.FIREBASE_TOKEN }} --project task-manager-backend-1a308
